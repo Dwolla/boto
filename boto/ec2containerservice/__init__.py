@@ -30,8 +30,8 @@ def regions():
     :rtype: list
     :return: A list of :class:`boto.regioninfo.RegionInfo`
     """
-    from boto.ec2containerservice import EC2ContainerServiceConnection
-    return get_regions('', connection_cls=EC2ContainerServiceConnection)
+    from boto.ec2containerservice.layer1 import EC2ContainerServiceConnection
+    return get_regions('ec2containerservice', connection_cls=EC2ContainerServiceConnection)
 
 
 def connect_to_region(region_name, **kw_params):
